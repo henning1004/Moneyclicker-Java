@@ -32,6 +32,10 @@ public class Main {
         JButton item4 = new JButton(Item4_Name);
         JButton item5 = new JButton(Item5_Name);
         JButton item6 = new JButton(Item6_Name);
+        JButton save = new JButton("Speichern");
+        JButton open = new JButton("Laden");
+        JButton delete = new JButton("Löschen");
+        JButton reset = new JButton("Reset");
         
         geld.addActionListener( new ActionListener() { 
             @Override
@@ -97,17 +101,6 @@ public class Main {
             }
         });
         
-        item1.addActionListener( new ActionListener() { 
-            @Override
-            public void actionPerformed( ActionEvent e ) { 
-                item_kaufen(Confiq.Item1_Name);
-                System.out.println("Anzahl: " + Item1_Anzahl + " " + Confiq.Item1_Name + "n");
-                System.out.println("Preis: " + runden(Item1_Preis,2) + "€");
-                System.out.println("+ " + runden(Item1_Pc,2) + " pro klick");
-                System.out.println("-------------------");
-            }
-        });
-        
         item6.addActionListener( new ActionListener() { 
             @Override
             public void actionPerformed( ActionEvent e ) { 
@@ -118,10 +111,36 @@ public class Main {
                 System.out.println("-------------------");
             }
         });
+        
+        save.addActionListener( new ActionListener() { 
+            @Override
+            public void actionPerformed( ActionEvent e ) { 
+                save("save1.csv");
+            }
+        });
+        
+        open.addActionListener( new ActionListener() { 
+            @Override
+            public void actionPerformed( ActionEvent e ) { 
+                open("save1.csv");
+            }
+        });
+        
+        delete.addActionListener( new ActionListener() { 
+            @Override
+            public void actionPerformed( ActionEvent e ) { 
+                delete_save("save1.csv");
+            }
+        });
+        
+        reset.addActionListener( new ActionListener() { 
+            @Override
+            public void actionPerformed( ActionEvent e ) { 
+                reset();
+            }
+        });
 
 
-        
-        
         panel.add( geld );
         panel.add( item1 );
         panel.add( item2 );
@@ -129,35 +148,17 @@ public class Main {
         panel.add( item4 );
         panel.add( item5 );
         panel.add( item6 );
+        panel.add( save );
+        panel.add( open );
+        panel.add( delete );
+        panel.add( reset );
  
-        panel.setPreferredSize( new Dimension( 120, 300 ) );
+        panel.setPreferredSize( new Dimension( 120, 390 ) );
  
         frame.add( panel );
  
-        frame.setSize( 300, 350 );
+        frame.setSize( 200, 400 );
         frame.setVisible(true);
-        
-        
-        
-        //Funktion zum Testen der Funktionen
-        //Im Prinzip ein Consolen basiertes Game
-        int i=0;
-        while(i<999){
-            System.out.println("-------------------");
-            Scanner scan=new Scanner(System.in);
-            System.out.println("0=Klick, 1=Flasche, 2=Oma, ...");
-            double Zahl_1= scan.nextDouble();
-  
-            System.out.println("-------------------");
-            if(Zahl_1 == 9){
-                save("save1.csv");
-            }else if(Zahl_1 == 8){
-                open("save1.csv");
-            }else{
-                delete_save("save1.csv");
-            }
-            i++;
-        }
     }
     
 }
