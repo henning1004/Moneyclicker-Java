@@ -1,6 +1,8 @@
 package moneyclicker;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.util.Scanner;
 import static moneyclicker.Func.*;
@@ -30,6 +32,96 @@ public class Main {
         JButton item4 = new JButton(Item4_Name);
         JButton item5 = new JButton(Item5_Name);
         JButton item6 = new JButton(Item6_Name);
+        
+        geld.addActionListener( new ActionListener() { 
+            @Override
+            public void actionPerformed( ActionEvent e ) { 
+                geld_addieren();
+                System.out.println("Geld: " + runden(Geld,2) + "€");
+                System.out.println("+ " + runden(Geld_Pc,2) + "€ pro klick");
+            }
+        });
+        
+        item1.addActionListener( new ActionListener() { 
+            @Override
+            public void actionPerformed( ActionEvent e ) { 
+                item_kaufen(Confiq.Item1_Name);
+                System.out.println("Anzahl: " + Item1_Anzahl + " " + Confiq.Item1_Name + "n");
+                System.out.println("Preis: " + runden(Item1_Preis,2) + "€");
+                System.out.println("+ " + runden(Item1_Pc,2) + " pro klick");
+                System.out.println("-------------------");
+            }
+        });
+        
+        item2.addActionListener( new ActionListener() { 
+            @Override
+            public void actionPerformed( ActionEvent e ) { 
+                item_kaufen(Confiq.Item2_Name);
+                System.out.println("Anzahl: " + Item2_Anzahl + " " + Confiq.Item2_Name + "s");
+                System.out.println("Preis: " + runden(Item2_Preis,2) + "€");
+                System.out.println("+ " + runden(Item2_Pc,2) + " pro klick");
+                System.out.println("-------------------");
+            }
+        });
+        
+        item3.addActionListener( new ActionListener() { 
+            @Override
+            public void actionPerformed( ActionEvent e ) { 
+                item_kaufen(Confiq.Item3_Name);
+                System.out.println("Anzahl: " + Item3_Anzahl + " " + Confiq.Item3_Name + "en");
+                System.out.println("Preis: " + runden(Item3_Preis,2) + "€");
+                System.out.println("+ " + runden(Item3_Pc,2) + " pro klick");
+                System.out.println("-------------------");
+            }
+        });
+        
+        item4.addActionListener( new ActionListener() { 
+            @Override
+            public void actionPerformed( ActionEvent e ) { 
+                item_kaufen(Confiq.Item4_Name);
+                System.out.println("Anzahl: " + Item4_Anzahl + " " + Confiq.Item4_Name + "en");
+                System.out.println("Preis: " + runden(Item4_Preis,2) + "€");
+                System.out.println("+ " + runden(Item4_Pc,2) + " pro klick");
+                System.out.println("-------------------");
+            }
+        });
+        
+        item5.addActionListener( new ActionListener() { 
+            @Override
+            public void actionPerformed( ActionEvent e ) { 
+                item_kaufen(Confiq.Item5_Name);
+                System.out.println("Anzahl: " + Item5_Anzahl + " " + Confiq.Item5_Name);
+                System.out.println("Preis: " + runden(Item5_Preis,2) + "€");
+                System.out.println("+ " + runden(Item5_Pc,2) + " pro klick");
+                System.out.println("-------------------");
+            }
+        });
+        
+        item1.addActionListener( new ActionListener() { 
+            @Override
+            public void actionPerformed( ActionEvent e ) { 
+                item_kaufen(Confiq.Item1_Name);
+                System.out.println("Anzahl: " + Item1_Anzahl + " " + Confiq.Item1_Name + "n");
+                System.out.println("Preis: " + runden(Item1_Preis,2) + "€");
+                System.out.println("+ " + runden(Item1_Pc,2) + " pro klick");
+                System.out.println("-------------------");
+            }
+        });
+        
+        item6.addActionListener( new ActionListener() { 
+            @Override
+            public void actionPerformed( ActionEvent e ) { 
+                item_kaufen(Confiq.Item6_Name);
+                System.out.println("Anzahl: " + Item6_Anzahl + " " + Confiq.Item6_Name + "n");
+                System.out.println("Preis: " + runden(Item6_Preis,2) + "€");
+                System.out.println("+ " + runden(Item6_Pc,2) + " pro klick");
+                System.out.println("-------------------");
+            }
+        });
+
+
+        
+        
         panel.add( geld );
         panel.add( item1 );
         panel.add( item2 );
@@ -57,49 +149,7 @@ public class Main {
             double Zahl_1= scan.nextDouble();
   
             System.out.println("-------------------");
-            if(Zahl_1 == 0){
-                geld_addieren();
-                System.out.println("Geld: " + runden(Geld,2) + "€");
-                System.out.println("+ " + runden(Geld_Pc,2) + "€ pro klick");
-                System.out.println("-------------------");
-                
-            }else if(Zahl_1 == 1){
-                item_kaufen(Confiq.Item1_Name);
-                System.out.println("Anzahl: " + Item1_Anzahl + Confiq.Item1_Name + "n");
-                System.out.println("Preis: " + runden(Item1_Preis,2) + "€");
-                System.out.println("+ " + runden(Item1_Pc,2) + " pro klick");
-                System.out.println("-------------------");
-            }else if(Zahl_1 == 2){
-                item_kaufen(Confiq.Item2_Name);
-                System.out.println("Anzahl: " + Item2_Anzahl + Item2_Name + "s");
-                System.out.println("Preis: " + runden(Item2_Preis,2) + "€");
-                System.out.println("+ " + Item2_Pc + " pro klick");
-                System.out.println("-------------------");
-            }else if(Zahl_1 == 3){
-                item_kaufen(Confiq.Item3_Name);
-                System.out.println("Anzahl: " + Item3_Anzahl + Item3_Name + "en");
-                System.out.println("Preis: " + runden(Item3_Preis,2) + "€");
-                System.out.println("+ " + Item3_Pc + " pro klick");
-                System.out.println("-------------------");
-            }else if(Zahl_1 == 4){
-                item_kaufen(Confiq.Item4_Name);
-                System.out.println("Anzahl: " + Item4_Anzahl + Item4_Name + "en");
-                System.out.println("Preis: " + runden(Item4_Preis,2) + "€");
-                System.out.println("+ " + Item4_Pc + " pro klick");
-                System.out.println("-------------------");
-            }else if(Zahl_1 == 5){
-                item_kaufen(Confiq.Item5_Name);
-                System.out.println("Anzahl: " + Item5_Anzahl + Item5_Name);
-                System.out.println("Preis: " + runden(Item5_Preis,2) + "€");
-                System.out.println("+ " + Item5_Pc + " pro klick");
-                System.out.println("-------------------");
-            }else if(Zahl_1 == 6){
-                item_kaufen(Confiq.Item6_Name);
-                System.out.println("Anzahl: " + Item6_Anzahl + Item6_Name+"n");
-                System.out.println("Preis: " + runden(Item6_Preis,2) + "€");
-                System.out.println("+ " + Item6_Pc + " pro klick");
-                System.out.println("-------------------");
-            }else if(Zahl_1 == 9){
+            if(Zahl_1 == 9){
                 save("save1.csv");
             }else if(Zahl_1 == 8){
                 open("save1.csv");
