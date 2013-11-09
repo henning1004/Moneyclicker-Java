@@ -1,6 +1,6 @@
 package moneyclicker;
 
-import static moneyclicker.Math.geld_addieren;
+import static moneyclicker.Itemfunc.geld_addieren;
 
 /**
  * @author Henning

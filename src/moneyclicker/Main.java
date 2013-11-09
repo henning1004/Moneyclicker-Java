@@ -2,8 +2,7 @@ package moneyclicker;
 
 import java.util.Scanner;
 import static moneyclicker.Func.*;
-import static moneyclicker.Math.*;
-import static moneyclicker.GUI.*;
+import static moneyclicker.Itemfunc.*;
 
 /**
  * @author Danny
@@ -14,7 +13,7 @@ public class Main {
     
    
     public static void main(String[] args) {
-
+        
         //Funktion zum Testen der Funktionen
         //Im Prinzip ein Consolen basiertes Game
         int i=0;
@@ -28,7 +27,7 @@ public class Main {
             if(Zahl_1 == 0){
                 geld_addieren();
                 System.out.println("Geld: "+Confiq.Geld+"€");
-                System.out.println("+ " + Confiq.Geld_Pc +"€ pro klick");
+                System.out.println("+ " + runden(Confiq.Geld_Pc,2)+"€ pro klick");
                 System.out.println("-------------------");
                 
             }else if(Zahl_1 == 1){

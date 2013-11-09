@@ -1,10 +1,12 @@
 package moneyclicker;
 
+import java.lang.Math;
+
 /**
 * @author Henning
 */
 
-public class Math {
+public class Itemfunc {
     
     public static double pc_berechnen (){
         itempc_berechnen(Confiq.Item1_Name);
@@ -138,4 +140,10 @@ public class Math {
                 return Confiq.Item6_Pc;
             }
     }
+    
+    public static double runden(double wert, int stellen){
+           double gerundet = Math.round(wert * Math.pow(10d, stellen));
+            return gerundet / Math.pow(10d, stellen);
+    } 
+
 }
