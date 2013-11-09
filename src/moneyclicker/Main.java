@@ -3,8 +3,8 @@ package moneyclicker;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import javax.swing.*;
-import java.util.Scanner;
 import static moneyclicker.Func.*;
 import static moneyclicker.Itemfunc.*;
 import static moneyclicker.Confiq.*;
@@ -17,7 +17,7 @@ import static moneyclicker.Confiq.*;
 public class Main {
     
    
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
         JFrame frame = new JFrame("Moneyclicker");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -36,6 +36,7 @@ public class Main {
         JButton open = new JButton("Laden");
         JButton delete = new JButton("Löschen");
         JButton reset = new JButton("Reset");
+        
         
         geld.addActionListener( new ActionListener() { 
             @Override
