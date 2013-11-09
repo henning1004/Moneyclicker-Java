@@ -1,6 +1,5 @@
 package moneyclicker;
 
-import static moneyclicker.Main.Geld;
 import static moneyclicker.Math.geld_addieren;
 
 /**
@@ -45,7 +44,7 @@ public class GUI extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         geld_addieren();
-        System.out.println(Geld);
+        System.out.println(Confiq.Geld);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

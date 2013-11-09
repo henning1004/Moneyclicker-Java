@@ -6,101 +6,101 @@ package moneyclicker;
 
 public class Math {
     
-    public static float pc_berechnen (){
-        itempc_berechnen(Main.Item1_Name);
-        itempc_berechnen(Main.Item2_Name);
-        itempc_berechnen(Main.Item3_Name);
-        itempc_berechnen(Main.Item4_Name);
-        itempc_berechnen(Main.Item5_Name);
-        itempc_berechnen(Main.Item6_Name);
-        Main.Geld_Pc = Main.Geld_Pc_Anfang + Main.Item1_Pc + Main.Item2_Pc + Main.Item3_Pc + Main.Item4_Pc + Main.Item5_Pc + Main.Item6_Pc;
-        return Main.Geld_Pc;
+    public static double pc_berechnen (){
+        itempc_berechnen(Confiq.Item1_Name);
+        itempc_berechnen(Confiq.Item2_Name);
+        itempc_berechnen(Confiq.Item3_Name);
+        itempc_berechnen(Confiq.Item4_Name);
+        itempc_berechnen(Confiq.Item5_Name);
+        itempc_berechnen(Confiq.Item6_Name);
+        Confiq.Geld_Pc = Confiq.Geld_Pc_Anfang + Confiq.Item1_Pc + Confiq.Item2_Pc + Confiq.Item3_Pc + Confiq.Item4_Pc + Confiq.Item5_Pc + Confiq.Item6_Pc;
+        return Confiq.Geld_Pc;
     }
     
-    public static float geld_addieren(){        
+    public static double geld_addieren(){        
         pc_berechnen();
-        Main.Geld += Main.Geld_Pc;
-        return Main.Geld;
+        Confiq.Geld += Confiq.Geld_Pc;
+        return Confiq.Geld;
     }
     
-    public static float itempreis_berechnen(String Item_Name){
-            if(Item_Name.equals(Main.Item1_Name)){
-                Main.Item1_Preis = Main.Item1_Preis + (Main.Item1_Preis * Main.Item1_Faktor);
-                return Main.Item1_Preis;
+    public static double itempreis_berechnen(String Item_Name){
+            if(Item_Name.equals(Confiq.Item1_Name)){
+                Confiq.Item1_Preis = Confiq.Item1_Preis + (Confiq.Item1_Preis * Confiq.Item1_Faktor);
+                return Confiq.Item1_Preis;
             }
-            else if(Item_Name.equals(Main.Item2_Name)){
-                Main.Item2_Preis = Main.Item2_Preis + (Main.Item2_Preis * Main.Item2_Faktor);
-                return Main.Item2_Preis;
+            else if(Item_Name.equals(Confiq.Item2_Name)){
+                Confiq.Item2_Preis = Confiq.Item2_Preis + (Confiq.Item2_Preis * Confiq.Item2_Faktor);
+                return Confiq.Item2_Preis;
             }
-            else if(Item_Name.equals(Main.Item3_Name)){
-                Main.Item3_Preis = Main.Item3_Preis + (Main.Item3_Preis * Main.Item3_Faktor);
-                return Main.Item3_Preis;
+            else if(Item_Name.equals(Confiq.Item3_Name)){
+                Confiq.Item3_Preis = Confiq.Item3_Preis + (Confiq.Item3_Preis * Confiq.Item3_Faktor);
+                return Confiq.Item3_Preis;
             }
-            else if(Item_Name.equals(Main.Item4_Name)){
-                Main.Item4_Preis = Main.Item4_Preis + (Main.Item4_Preis * Main.Item4_Faktor);
-                return Main.Item4_Preis;
+            else if(Item_Name.equals(Confiq.Item4_Name)){
+                Confiq.Item4_Preis = Confiq.Item4_Preis + (Confiq.Item4_Preis * Confiq.Item4_Faktor);
+                return Confiq.Item4_Preis;
             }
-            else if(Item_Name.equals(Main.Item5_Name)){
-                Main.Item5_Preis = Main.Item5_Preis + (Main.Item5_Preis * Main.Item5_Faktor);
-                return Main.Item5_Preis;
+            else if(Item_Name.equals(Confiq.Item5_Name)){
+                Confiq.Item5_Preis = Confiq.Item5_Preis + (Confiq.Item5_Preis * Confiq.Item5_Faktor);
+                return Confiq.Item5_Preis;
             }
             else{
-                Main.Item6_Preis = Main.Item6_Preis + (Main.Item6_Preis * Main.Item6_Faktor);
-                return Main.Item6_Preis;
+                Confiq.Item6_Preis = Confiq.Item6_Preis + (Confiq.Item6_Preis * Confiq.Item6_Faktor);
+                return Confiq.Item6_Preis;
             }
 
     }
     
     public static boolean item_kaufen(String Item_Name){
-            if(Item_Name.equals(Main.Item1_Name)){
-                if(Main.Geld>=Main.Item1_Preis){
-                    Main.Item1_Anzahl++;
-                    Main.Geld-=Main.Item1_Preis;
+            if(Item_Name.equals(Confiq.Item1_Name)){
+                if(Confiq.Geld>=Confiq.Item1_Preis){
+                    Confiq.Item1_Anzahl++;
+                    Confiq.Geld-=Confiq.Item1_Preis;
                 }
                 else{
                     return false;
                 }
             }
-            else if(Item_Name.equals(Main.Item2_Name)){
-                if(Main.Geld>=Main.Item2_Preis){
-                    Main.Item2_Anzahl++;
-                    Main.Geld-=Main.Item2_Preis;
+            else if(Item_Name.equals(Confiq.Item2_Name)){
+                if(Confiq.Geld>=Confiq.Item2_Preis){
+                    Confiq.Item2_Anzahl++;
+                    Confiq.Geld-=Confiq.Item2_Preis;
                 }
                 else{
                     return false;
                 }
             }
-            else if(Item_Name.equals(Main.Item3_Name)){
-                if(Main.Geld>=Main.Item3_Preis){
-                    Main.Item3_Anzahl++;
-                    Main.Geld-=Main.Item3_Preis;
+            else if(Item_Name.equals(Confiq.Item3_Name)){
+                if(Confiq.Geld>=Confiq.Item3_Preis){
+                    Confiq.Item3_Anzahl++;
+                    Confiq.Geld-=Confiq.Item3_Preis;
                 }
                 else{
                     return false;
                 }
             }
-            else if(Item_Name.equals(Main.Item4_Name)){
-                if(Main.Geld>=Main.Item4_Preis){
-                    Main.Item4_Anzahl++;
-                    Main.Geld-=Main.Item4_Preis;                    
+            else if(Item_Name.equals(Confiq.Item4_Name)){
+                if(Confiq.Geld>=Confiq.Item4_Preis){
+                    Confiq.Item4_Anzahl++;
+                    Confiq.Geld-=Confiq.Item4_Preis;                    
                 }
                 else{
                     return false;
                 }
             }
-            else if(Item_Name.equals(Main.Item5_Name)){
-                if(Main.Geld>=Main.Item5_Preis){
-                    Main.Item5_Anzahl++;
-                    Main.Geld-=Main.Item5_Preis;
+            else if(Item_Name.equals(Confiq.Item5_Name)){
+                if(Confiq.Geld>=Confiq.Item5_Preis){
+                    Confiq.Item5_Anzahl++;
+                    Confiq.Geld-=Confiq.Item5_Preis;
                 }
                 else{
                     return false;
                 }
             }
             else{
-                if(Main.Geld>=Main.Item6_Preis){
-                    Main.Item6_Anzahl++;
-                    Main.Geld-=Main.Item6_Preis;
+                if(Confiq.Geld>=Confiq.Item6_Preis){
+                    Confiq.Item6_Anzahl++;
+                    Confiq.Geld-=Confiq.Item6_Preis;
                 }
                 else{
                     return false;
@@ -112,30 +112,30 @@ public class Math {
             
     }
     
-    public static float itempc_berechnen(String Item_Name){
-            if(Item_Name.equals(Main.Item1_Name)){
-                Main.Item1_Pc = Main.Item1_Pc_Anfang * Main.Item1_Anzahl;
-                return Main.Item1_Pc;
+    public static double itempc_berechnen(String Item_Name){
+            if(Item_Name.equals(Confiq.Item1_Name)){
+                Confiq.Item1_Pc = Confiq.Item1_Pc_Anfang * Confiq.Item1_Anzahl;
+                return Confiq.Item1_Pc;
             }
-            else if(Item_Name.equals(Main.Item2_Name)){
-                Main.Item2_Pc = Main.Item2_Pc_Anfang * Main.Item2_Anzahl;
-                return Main.Item2_Pc;
+            else if(Item_Name.equals(Confiq.Item2_Name)){
+                Confiq.Item2_Pc = Confiq.Item2_Pc_Anfang * Confiq.Item2_Anzahl;
+                return Confiq.Item2_Pc;
             }
-            else if(Item_Name.equals(Main.Item3_Name)){
-                Main.Item3_Pc = Main.Item3_Pc_Anfang * Main.Item3_Anzahl;
-                return Main.Item3_Pc;
+            else if(Item_Name.equals(Confiq.Item3_Name)){
+                Confiq.Item3_Pc = Confiq.Item3_Pc_Anfang * Confiq.Item3_Anzahl;
+                return Confiq.Item3_Pc;
             }
-            else if(Item_Name.equals(Main.Item4_Name)){
-                Main.Item4_Pc = Main.Item4_Pc_Anfang * Main.Item4_Anzahl;
-                return Main.Item4_Pc;
+            else if(Item_Name.equals(Confiq.Item4_Name)){
+                Confiq.Item4_Pc = Confiq.Item4_Pc_Anfang * Confiq.Item4_Anzahl;
+                return Confiq.Item4_Pc;
             }
-            else if(Item_Name.equals(Main.Item5_Name)){
-                Main.Item5_Pc = Main.Item5_Pc_Anfang * Main.Item5_Anzahl;
-                return Main.Item5_Pc;
+            else if(Item_Name.equals(Confiq.Item5_Name)){
+                Confiq.Item5_Pc = Confiq.Item5_Pc_Anfang * Confiq.Item5_Anzahl;
+                return Confiq.Item5_Pc;
             }
             else{
-                Main.Item6_Pc = Main.Item6_Pc_Anfang * Main.Item6_Anzahl;
-                return Main.Item6_Pc;
+                Confiq.Item6_Pc = Confiq.Item6_Pc_Anfang * Confiq.Item6_Anzahl;
+                return Confiq.Item6_Pc;
             }
     }
 }
