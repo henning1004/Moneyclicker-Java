@@ -23,17 +23,26 @@ public class Main {
         frame.setLayout( new FlowLayout() );
  
         JPanel panel = new JPanel();
-        JButton geld = new JButton("OK");
+        JButton geld = new JButton("Geld");
+        JButton item1 = new JButton(Item1_Name);
+        JButton item2 = new JButton(Item2_Name);
+        JButton item3 = new JButton(Item3_Name);
+        JButton item4 = new JButton(Item4_Name);
+        JButton item5 = new JButton(Item5_Name);
+        JButton item6 = new JButton(Item6_Name);
         panel.add( geld );
+        panel.add( item1 );
+        panel.add( item2 );
+        panel.add( item3 );
+        panel.add( item4 );
+        panel.add( item5 );
+        panel.add( item6 );
  
-        panel.setPreferredSize( new java.awt.Dimension( 100, 39 ) );
- 
-        // Legt eine schwarze einfache Linie als Border um das JPanel
-        panel.setBorder( BorderFactory.createLineBorder( Color.black ) );
+        panel.setPreferredSize( new Dimension( 120, 300 ) );
  
         frame.add( panel );
  
-        frame.setSize( 300, 200 );
+        frame.setSize( 300, 350 );
         frame.setVisible(true);
         
         
