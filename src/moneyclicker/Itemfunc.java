@@ -143,7 +143,7 @@ public class Itemfunc {
     
     public static double runden(double wert, int stellen){
            double gerundet = Math.round(wert * Math.pow(10d, stellen));
-            return gerundet / Math.pow(10d, stellen);
+           return gerundet / Math.pow(10d, stellen);
     } 
 
 }
