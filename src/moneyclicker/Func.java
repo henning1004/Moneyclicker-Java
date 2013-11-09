@@ -54,7 +54,7 @@ public class Func {
                 myWriter.write (Main.Geld + "\n") ;
 
                 myWriter.write (Main.Item1_Anzahl + "\n") ;
-                myWriter.write (Main.Item1_Preis+ "\n") ;
+                myWriter.write (Main.Item1_Preis + "\n") ;
 
                 myWriter.write (Main.Item2_Anzahl + "\n") ;
                 myWriter.write (Main.Item2_Preis + "\n") ;

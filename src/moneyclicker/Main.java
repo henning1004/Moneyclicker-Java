@@ -3,6 +3,7 @@ package moneyclicker;
 import java.util.Scanner;
 import static moneyclicker.Func.*;
 import static moneyclicker.Math.*;
+import static moneyclicker.GUI.*;
 
 /**
  * @author Danny
@@ -58,7 +59,7 @@ public class Main {
     public static float Item6_Pc = 0;
     
     public static void main(String[] args) {
-        
+
         //Funktion zum Testen der Funktionen
         //Im Prinzip ein Consolen basiertes Game
         int i=0;
