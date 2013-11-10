@@ -2,6 +2,7 @@ package moneyclicker;
 
 import java.io.*;
 import static moneyclicker.Confiq.*;
+import static moneyclicker.Itemfunc.*;
 
 /**
  * @author Henning
@@ -108,6 +109,7 @@ public class Func {
                 Item6_Preis = Float.parseFloat(myReader.readLine());
                 
                 myReader.close();
+                pc_berechnen();
                 System.out.println("File opened");
                 return true;
         }

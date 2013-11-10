@@ -1,6 +1,8 @@
 package moneyclicker;
 
+import javax.swing.ImageIcon;
 import static moneyclicker.Confiq.*;
+import static moneyclicker.Main.*;
 
 /**
 * @author Henning
@@ -8,7 +10,7 @@ import static moneyclicker.Confiq.*;
 
 public class Itemfunc {
     
-    public static double pc_berechnen (){
+    public static double pc_berechnen(){
         itempc_berechnen(Item1_Name);
         itempc_berechnen(Item2_Name);
         itempc_berechnen(Item3_Name);
@@ -110,6 +112,7 @@ public class Itemfunc {
             }
             itempreis_berechnen(Item_Name);
             itempc_berechnen(Item_Name);
+            pc_berechnen();
             return true;
             
     }
@@ -146,4 +149,75 @@ public class Itemfunc {
            return gerundet / Math.pow(10d, stellen);
     } 
 
+    public static void geld_button_timer(){
+        final java.util.Timer timer = new java.util.Timer();
+                java.util.TimerTask task = new java.util.TimerTask() {
+                @Override
+                public void run() {
+                    String img_Pfad;
+                    if(Geld_Pc<0.02D){
+                        img_Pfad = "src/images/1c.png";
+                    }
+                    else if(Geld_Pc<0.05D){
+                        img_Pfad = "src/images/2c.png";
+                    }
+                    else if(Geld_Pc<0.10D){
+                        img_Pfad = "src/images/5c.png";
+                    }
+                    else if(Geld_Pc<0.20D){
+                        img_Pfad = "src/images/10c.png";
+                    }
+                    else if(Geld_Pc<0.50D){
+                        img_Pfad = "src/images/20c.png";
+                    }
+                    else if(Geld_Pc<1){
+                        img_Pfad = "src/images/50c.png";
+                    }
+                    else if(Geld_Pc<2){
+                        img_Pfad = "src/images/geld.png";
+                    }
+                    else if(Geld_Pc<5){
+                        img_Pfad = "src/images/2e.png";
+                    }	
+                    else if(Geld_Pc<10){
+                        img_Pfad = "src/images/5e.png";
+                    }
+                    else if(Geld_Pc<20){
+                        img_Pfad = "src/images/10e.png";
+                    }
+                    else if(Geld_Pc<50){
+                        img_Pfad = "src/images/20e.png";
+                    }
+                    else if(Geld_Pc<100){
+                        img_Pfad = "src/images/50e.png";
+                    }
+                    else if(Geld_Pc<200){
+                        img_Pfad = "src/images/100e.png";
+                    }
+                    else if(Geld_Pc<500){
+                        img_Pfad = "src/images/200e.png";
+                    }
+                    else{
+                        img_Pfad = "src/images/500e.png";
+                    }
+
+                    ImageIcon geld_bild = new ImageIcon(img_Pfad);
+                    geld_button.setIcon(geld_bild);
+
+                }
+        };
+        timer.scheduleAtFixedRate(task, 0, 100);
+    }
+    
+    public static void geld_label_timer(){
+        final java.util.Timer timer = new java.util.Timer();
+                java.util.TimerTask task = new java.util.TimerTask() {
+                @Override
+                public void run() {
+                    geld_label.setText(new Double(runden(Geld,2)).toString() + "€");
+                    geldpc_label.setText("pro Klick: " + new Double(runden(Geld_Pc,2)).toString() + "€");
+                }
+        };
+        timer.scheduleAtFixedRate(task, 0, 20);
+    }
 }

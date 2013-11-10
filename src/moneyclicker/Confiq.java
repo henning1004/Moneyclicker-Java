@@ -9,7 +9,7 @@ package moneyclicker;
 public class Confiq {
     
     public static double Geld = 0;
-    public static double Geld_Pc_Anfang = 0.5;
+    public static double Geld_Pc_Anfang = 0.1;
     public static double Geld_Pc = 0;
     
     public static String Item1_Name = "Flasche";
